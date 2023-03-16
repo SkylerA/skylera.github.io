@@ -1,0 +1,205 @@
+:root {
+    --gradient: linear-gradient(180deg, #009aff, #ff00cc, #ffaa00);
+    --colors-pageBackground: rgb(32, 32, 32);
+    --colors-highContrast: rgb(192, 192, 192);
+    --title-color: white;
+}
+
+body {
+    color: var(--colors-highContrast);
+    font-family: system-ui, Helvetica Neue, sans-serif;
+}
+
+header {
+    container-type: inline-size;
+}
+
+h1 {
+    /* font-size: 3rem; */
+    font-size: calc(100cqw / 11.6);
+}
+
+h2 {
+    font-size: 2rem;
+}
+
+body,
+html {
+    height: 100%;
+}
+
+body {
+    min-height: 100%;
+    margin: auto;
+    min-width: 300px;
+    max-width: 750px;
+    background-color: var(--colors-pageBackground);
+}
+
+article a[target="_blank"]::after {
+    content: "";
+    width: 0.5rem;
+    height: 0.5rem;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='white' viewBox='0 0 16 16'%3E%3Cpath fill-rule='evenodd' d='M8.636 3.5a.5.5 0 0 0-.5-.5H1.5A1.5 1.5 0 0 0 0 4.5v10A1.5 1.5 0 0 0 1.5 16h10a1.5 1.5 0 0 0 1.5-1.5V7.864a.5.5 0 0 0-1 0V14.5a.5.5 0 0 1-.5.5h-10a.5.5 0 0 1-.5-.5v-10a.5.5 0 0 1 .5-.5h6.636a.5.5 0 0 0 .5-.5z'/%3E%3Cpath fill-rule='evenodd' d='M16 .5a.5.5 0 0 0-.5-.5h-5a.5.5 0 0 0 0 1h3.793L6.146 9.146a.5.5 0 1 0 .708.708L15 1.707V5.5a.5.5 0 0 0 1 0v-5z'/%3E%3C/svg%3E");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    display: inline-block;
+}
+
+.gradient-fade,
+a:hover {
+    background: var(--gradient);
+    background-size: 600% 600%;
+    -webkit-animation: GradientFade 6s ease infinite;
+    -moz-animation: GradientFade 6s ease infinite;
+    animation: GradientFade 6s ease infinite;
+    backgroundclip: text;
+    -moz-background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+@-webkit-keyframes GradientFade {
+    0% {
+        background-position: 50% 0%;
+    }
+
+    50% {
+        background-position: 51% 100%;
+    }
+
+    100% {
+        background-position: 50% 0%;
+    }
+}
+
+@-moz-keyframes GradientFade {
+    0% {
+        background-position: 50% 0%;
+    }
+
+    50% {
+        background-position: 51% 100%;
+    }
+
+    100% {
+        background-position: 50% 0%;
+    }
+}
+
+@keyframes GradientFade {
+    0% {
+        background-position: 50% 0%;
+    }
+
+    50% {
+        background-position: 51% 100%;
+    }
+
+    100% {
+        background-position: 50% 0%;
+    }
+}
+
+article {
+    margin: 2.5rem 0;
+}
+
+article#intro {
+    margin: 2.5rem 0;
+}
+
+article>article {
+    margin-left: 2.5rem;
+}
+
+.title {
+    color: var(--title-color);
+}
+
+p {
+    margin: 1.5rem 0rem;
+}
+
+a {
+    cursor: pointer;
+    font-weight: 500;
+}
+
+li {
+    margin-left: 1rem;
+}
+
+.details {
+    display: flex;
+    justify-content: space-between;
+}
+
+.details ul {
+    flex: 1;
+}
+
+.details img {
+    max-width: 20rem;
+    max-height: 10rem;
+}
+
+span:has(.logo-opus) {
+    margin-bottom: .1rem;
+    display: flex;
+    gap: .1rem;
+    color: var(--title-color);
+}
+
+.logo-rapid,
+.logo-mentor,
+.logo-garmin,
+.logo-opus {
+    max-width: 15rem;
+    max-height: 3rem;
+}
+
+.logo-rapid {
+    margin-left: -1rem;
+}
+
+header h1 {
+    font-weight: 700;
+}
+
+/* 
+header img {
+    width: 30px;
+    height: 30px;
+} */
+
+footer {
+    position: fixed;
+    bottom: -12px;
+    right: 0;
+    margin-bottom: -4px;
+    animation: peek 6s ease infinite;
+}
+
+@keyframes peek {
+    70% {
+        bottom: -12px;
+    }
+
+    80% {
+        bottom: 0;
+    }
+
+    99% {
+        bottom: 0;
+    }
+
+    100% {
+        bottom: -12px;
+    }
+}
+
+ul>ul {
+    margin-left: 1rem;
+}

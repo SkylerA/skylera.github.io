@@ -1,0 +1,41 @@
+button,
+input,
+select,
+textarea,
+a,
+area {
+    all: unset;
+}
+
+*,
+*::before,
+*::after,
+button,
+input,
+select,
+textarea,
+a,
+area {
+    margin: 0;
+    border: 0;
+    padding: 0;
+    box-sizing: inherit;
+    font: inherit;
+    font-weight: inherit;
+    text-align: inherit;
+    line-height: inherit;
+    word-break: inherit;
+    color: inherit;
+    background: transparent;
+    outline: none;
+    -webkit-tap-highlight-color: transparent;
+}
+
+body {
+    word-break: break-word;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-size: 16px;
+    box-sizing: border-box;
+    text-size-adjust: none;
+}
