@@ -120,10 +120,6 @@ article {
     container-type: inline-size;
 }
 
-article#intro {
-    margin: 2.5rem 0;
-}
-
 article>article {
     margin-left: 2.5rem;
 }
@@ -135,6 +131,15 @@ article>article {
 p {
     margin: 1.5rem 0rem;
 }
+
+#what>article>p:first-of-type {
+    margin: 0;
+}
+
+#where article:last-of-type {
+    margin-bottom: 0;
+}
+
 
 a {
     cursor: pointer;
