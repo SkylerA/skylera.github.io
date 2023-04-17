@@ -4,9 +4,10 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Resume site for Skyler Arabak" />
     <title>Skyler Arabak</title>
-    <link rel="stylesheet" href="style.css" />
     <link rel="stylesheet" href="reset.css" />
+    <link rel="stylesheet" href="style.css" />
   </head>
   <body>
     <header>
@@ -26,7 +27,7 @@
         </h2>
       </article>
 
-      <article>
+      <article id="where">
         <h2 class="title">Where I've Been</h2>
         <article>
           <img alt="Rapid Silicon" class="logo-rapid" src="./imgs/rapid.png" />
@@ -138,25 +139,146 @@
           <p>
             In my freetime, I'm working on a python framework that seeks to
             simplify the application and use of computer vision models for
-            applied projects as well as exploring how to make computer vision
-            accessible to the common user.
+            domain specific projects as well as exploring how to make computer
+            vision accessible to the common user.
           </p>
           <ul>
             <li>Python Back-end</li>
-            <ul>
-              <li>Crop and Pre-process video frames</li>
-              <li>Apply user computer vision models to frames</li>
-              <li>Collect and interpret results</li>
-              <li>Provide results via Flask server</li>
-            </ul>
+            <li>
+              <ul>
+                <li>Crop and Pre-process video frames</li>
+                <li>Apply user computer vision models to frames</li>
+                <li>Collect and interpret results</li>
+                <li>Provide results via Flask server</li>
+              </ul>
+            </li>
             <li>React Front-end</li>
-            <ul>
-              <li>Collect frames from video for feedback/testing</li>
-              <li>Create and modify crop and filter tasks</li>
-              <li>Test and debug user model results</li>
-            </ul>
+            <li>
+              <ul>
+                <li>Collect frames from video for feedback/testing</li>
+                <li>Create and modify crop and filter tasks</li>
+                <li>Test and debug user model results</li>
+                <li>
+                  Also experimenting with pulling backend elements like video
+                  processing into the client app with technologies like web
+                  assembly
+                </li>
+              </ul>
+            </li>
           </ul>
         </article>
+        <h3 class="title">Features</h3>
+        <p>
+          This project is a private repo for now, but I've captured a few of the
+          features below.
+        </p>
+        <p>
+          <em>
+            NOTE: This is a WIP debug ui; layout and visuals are minimal and not
+            final.
+          </em>
+        </p>
+        <div class="img-gallery">
+          <article>
+            <h4 class="title">Making Filters</h4>
+            <p>
+              "Filters" are a collection of actions run on a given frame of
+              video. A filter can take a whole video frame or can crop down to a
+              specific location. A filter can apply custom pre processing
+              functions to its crop. The augmented crop is then passed to a
+              specified parsing/inference function which allows the user/dev to
+              run whatever inference or other data collection they want on that
+              crop. The results are stored per crop, per frame and are returned
+              to the front end for debugging purposes.
+            </p>
+            <p>
+              In this example, the user quickly selectcs two portions of the
+              video they'd like to crop for OCR later.
+            </p>
+            <img src="/imgs/MakeFilters.webp" alt="Making Filters" />
+          </article>
+          <article>
+            <h4 class="title">Crop Image Pre-Processing</h4>
+            <p>
+              Pre-procs allow the user to modify their image/data before it is
+              passed to an inference/parsing stage.
+            </p>
+            <p>
+              On the left 2 filters are setup to apply different image pre
+              processing steps to improve the images for OCR. On the right,
+              those filters are run for the next 30 frames and the results are
+              shown.
+            </p>
+            <img src="/imgs/FilterArgs.webp" alt="Image Filters" />
+          </article>
+          <article>
+            <h4 class="title">Filter Results</h4>
+            <p>
+              Developers can return whatever data they want in their results.
+            </p>
+            <p>
+              In this example, a mobilnetv3 classifier is run on 4 different
+              crops and inference info is returned with it.
+            </p>
+            <img src="/imgs/ParseProcs.webp" alt="Filter Results" />
+          </article>
+          <article>
+            <h4 class="title">Filter Timeline</h4>
+            <p>
+              Provides a visual timeline of classifications made in a given
+              range of frames.
+            </p>
+            <p>
+              The timeline is an interactive canvas using svgs that are
+              generated on demand using class/marker meta data and then cached
+              for later drawings. Clicking a result jumps to the frame it was
+              captured in to allow for quick debugging/verification of inference
+              results.
+            </p>
+            <img src="/imgs/FrameTimeline.webp" alt="Filter Timeline" />
+          </article>
+          <article>
+            <h4 class="title">Label Editor</h4>
+            <p>
+              Client side label editor that can load, sort, and edit
+              classification labels. Greatly simplifies finding incorrectly
+              labeled classes as all labels are shown together making different
+              images stick out. Labels can be downloaded as a zip or uploaded to
+              a given model training label folder.
+            </p>
+            <p>
+              In this example, the class editor is pointed at a local collection
+              of files. When some mislabeled classes are found, they are quickly
+              fixed and then a few images are given a new label for
+              demonstration purposes.
+            </p>
+            <img src="/imgs/LabelEditor.webp" alt="Label Editor" />
+          </article>
+          <article>
+            <h4 class="title">Annotating Results</h4>
+            <p>
+              A filter's results can be selected and annotated to capture new
+              training data or to capture and re-label images the model is
+              currently mis-classifying
+            </p>
+            <img src="/imgs/AnnotateResults.webp" alt="Annotating Results" />
+          </article>
+          <article>
+            <h4 class="title">Experimental Concept. Time Based Labelling</h4>
+            <p>
+              In this example, a range of similar, time sorted frames are
+              overlayed on top of each other and the user quickly labels each
+              portion.
+              <a
+                href="https://codepen.io/SkylerA/pen/GRXYmdz"
+                target="_blank"
+                rel="noopener noreferrer"
+                >More Explanation and Live Demo</a
+              >
+            </p>
+            <img src="/imgs/TemporalLabels.webp" alt="Time Based Labelling" />
+          </article>
+        </div>
       </article>
     </div>
     <footer>
