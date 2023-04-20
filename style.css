@@ -234,3 +234,24 @@ ul>ul {
 .img-gallery img {
     max-width: 100cqw;
 }
+
+.wip {
+    position: relative;
+    display: inline-block;
+}
+
+.wip:has(img):after {
+    content: "WIP Prototype: Visuals and layout are not final";
+    background: orange;
+    color: #000;
+    font-weight: 500;
+    display: block;
+    position: absolute;
+    top: 0rem;
+    left: 0rem;
+    padding: 0 .25rem;
+    border-radius: .25rem;
+    -webkit-box-shadow: 0px 2px 6px 2px rgba(0, 0, 0, 0.5);
+    -moz-box-shadow: 0px 2px 6px 2px rgba(0, 0, 0, 0.5);
+    box-shadow: 0px 2px 6px 2px rgba(0, 0, 0, 0.75);
+}
