@@ -10,6 +10,15 @@ html {
     height: 100%;
 }
 
+html {
+    scroll-snap-type: y proximity;
+}
+
+article {
+    scroll-snap-align: start;
+    scroll-snap-stop: always;
+}
+
 body {
     min-height: 100%;
     margin: auto;
