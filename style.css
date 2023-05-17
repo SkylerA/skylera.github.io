@@ -19,7 +19,8 @@ article {
     scroll-snap-stop: always;
 }
 
-#where article {
+#where article,
+article#intro {
     scroll-snap-align: none;
 }
 
