@@ -19,6 +19,10 @@ article {
     scroll-snap-stop: always;
 }
 
+#where article {
+    scroll-snap-align: none;
+}
+
 body {
     min-height: 100%;
     margin: auto;
