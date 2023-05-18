@@ -10,6 +10,17 @@ html {
     height: 100%;
 }
 
+
+img,
+video {
+    display: block;
+}
+
+.img-gallery img,
+.img-gallery video {
+    width: 100%;
+}
+
 html {
     scroll-snap-type: y proximity;
 }
@@ -260,7 +271,8 @@ ul>ul {
     display: inline-block;
 }
 
-.wip:has(img):after {
+.wip:has(img):after,
+.wip:has(video):after {
     content: "WIP Prototype: Visuals and layout are not final";
     background: orange;
     color: #000;
