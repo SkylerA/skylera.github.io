@@ -36,6 +36,7 @@ article {
     scroll-snap-stop: always;
 }
 
+#where,
 #where article,
 article#intro {
     scroll-snap-align: none;
