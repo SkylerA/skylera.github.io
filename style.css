@@ -3,13 +3,13 @@
     --colors-pageBackground: rgb(32, 32, 32);
     --colors-highContrast: rgb(192, 192, 192);
     --title-color: white;
+    --article-margin: 1rem;
 }
 
 body,
 html {
     height: 100%;
 }
-
 
 img,
 video {
@@ -22,25 +22,9 @@ video {
 }
 
 html {
-    scroll-snap-type: y proximity;
+    margin: .5rem;
 }
 
-@media (min-width: 768px) {
-    html {
-        scroll-snap-type: none;
-    }
-}
-
-article {
-    scroll-snap-align: start;
-    scroll-snap-stop: always;
-}
-
-#where,
-#where article,
-article#intro {
-    scroll-snap-align: none;
-}
 
 body {
     min-height: 100%;
@@ -56,9 +40,13 @@ header {
     container-type: inline-size;
 }
 
-h1 {
+header h1 {
     /* font-size: 3rem; */
     font-size: calc(100cqw / 11.6);
+}
+
+#intro h2 {
+    font-size: calc(100cqw / 25);
 }
 
 h2 {
@@ -148,12 +136,12 @@ a:hover {
 }
 
 article {
-    margin: 2.5rem 0;
+    margin: var(--article-margin) 0;
     container-type: inline-size;
 }
 
 article>article {
-    margin-left: 2.5rem;
+    margin-left: var(--article-margin);
 }
 
 .title {
@@ -219,6 +207,10 @@ span:has(.logo-opus) {
     margin-left: -1rem;
 }
 
+.logo-garmin {
+    margin-top: -.75rem;
+}
+
 header h1 {
     font-weight: 700;
 }
@@ -232,7 +224,7 @@ header img {
 footer {
     position: fixed;
     bottom: -12px;
-    right: 0;
+    right: 5px;
     margin-bottom: -4px;
     animation: peek 6s ease infinite;
 }
@@ -289,4 +281,30 @@ ul>ul {
     -webkit-box-shadow: 0px 2px 6px 2px rgba(0, 0, 0, 0.5);
     -moz-box-shadow: 0px 2px 6px 2px rgba(0, 0, 0, 0.5);
     box-shadow: 0px 2px 6px 2px rgba(0, 0, 0, 0.75);
+}
+
+.logos {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: .5rem;
+    margin: var(--article-margin) .5rem .5rem .5rem
+}
+
+@media (max-width: 500px) {
+    .logos {
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
+
+.logos article,
+.img-gallery article {
+    border: 1px solid white;
+    height: 100%;
+    border-radius: .5rem;
+    background: #000;
+    padding: 1rem;
+}
+
+.logos article {
+    margin: 0;
 }
