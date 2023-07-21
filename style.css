@@ -268,11 +268,10 @@ ul>ul {
 
 .wip:has(img):after,
 .wip:has(video):after {
-    content: "WIP Prototype: Visuals and layout are not final";
+    content: "WIP Prototype: Visuals/layout not final";
     background: orange;
     color: #000;
     font-weight: 500;
-    font-size: .9rem;
     display: block;
     position: absolute;
     top: 0rem;
