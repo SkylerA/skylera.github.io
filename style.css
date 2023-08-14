@@ -306,7 +306,8 @@ ul>ul {
     display: flex;
     flex-wrap: wrap;
     gap: .25rem;
-    animation: carousel 10s linear infinite;
+    animation: carousel 18s linear infinite;
+    animation-delay: 250ms;
 }
 
 .scroll-gallery img,
