@@ -16,8 +16,6 @@
     <h1>
       <span class="gradient-fade">SKYLER ARABAK</span>
     </h1>
-  </header>
-  <div>
     <article id="intro">
       <h2>
         Senior Software Engineer with
@@ -29,18 +27,20 @@
       </h2>
       <ul class="links">
         <li><a href="mailto:LetsHireSkyler@gmail.com">Contact</a></li>
-        <li><a href="/Resume_2023_updated.pdf">Resume</a></li>
+        <li><a href="/Resume.pdf">Resume</a></li>
         <li><a href="https://icodethis.com/SkylerA" target="_blank">iCodeThis</a></li>
         <li><a href="https://github.com/SkylerA" target="_blank">Github</a></li>
         <li><a href="https://codepen.io/SkylerA" target="_blank">CodePen</a></li>
       </ul>
     </article>
+  </header>
 
+  <main>
     <article id="where">
       <h2 class="title">Where I've Been</h2>
       <div class="logos">
         <article>
-          <img alt="Rapid Silicon" class="logo-rapid" src="./imgs/rapid.png" />
+          <img alt="Rapid Silicon" class="logo-rapid" src="./imgs/rapid.png">
           <div class="details">
             <ul>
               <li>
@@ -58,7 +58,7 @@
           </div>
         </article>
         <article>
-          <img alt="Mentor Graphics, a Siemens business" class="logo-mentor" src="./imgs/mentor-dark.png" />
+          <img alt="Mentor Graphics, a Siemens business" class="logo-mentor" src="./imgs/mentor-dark.png">
           <ul>
             <li>
               Worked on
@@ -76,7 +76,7 @@
           </ul>
         </article>
         <article>
-          <img alt="Garmin AT, Inc." class="logo-garmin" src="./imgs/garmin.png" />
+          <img alt="Garmin AT, Inc." class="logo-garmin" src="./imgs/garmin.png">
           <div class="details">
             <ul>
               <li>
@@ -94,9 +94,9 @@
           </div>
         </article>
         <article>
-          <span><img alt="Opus Creative" class="logo-opus" src="./imgs/opus.png" />
+          <div class="opus"><img alt="Opus Creative" class="logo-opus" src="./imgs/opus.png">
             <h2>Opus Creative</h2>
-          </span>
+          </div>
           <div class="details">
             <ul>
               <li>Sliced and coded webpages in semantic HTML/CSS</li>
@@ -105,199 +105,238 @@
         </article>
       </div>
     </article>
-    <article id="what">
-      <h2 class="title">What I'm Doing</h2>
-      <article>
-        <p>
-          While most of my career work has been in desktop apps, my interests
-          and hobby projects lie in more modern, web-based user interface
-          technologies as well as computer vision.
-        </p>
-        <p>
-          In my freetime, I'm working on a python framework that seeks to
-          simplify the application and use of computer vision models for
-          domain specific projects as well as exploring how to make computer
-          vision accessible to the common user.
-        </p>
-        <ul>
-          <li>Python Back-end</li>
-          <li>
-            <ul>
-              <li>Crop and Pre-process video frames</li>
-              <li>Apply user computer vision models to frames</li>
-              <li>Collect and interpret results</li>
-              <li>Serve results via Flask</li>
-            </ul>
-          </li>
-          <li>React Front-end</li>
-          <li>
-            <ul>
-              <li>Collect frames from video for feedback/testing</li>
-              <li>Create and modify crop and filter tasks</li>
-              <li>Test and debug user model results</li>
-              <li>
-                Also experimenting with pulling backend elements like video
-                processing into the client app
-              <li>
-                <ul>
-                  <li>
-                    Client side video parsing <a href="https://www.frameslice.com" target="_blank"
-                      rel="noopener noreferrer">proof of concept</a>
-                  </li>
-                  <li>
-                    Early testing with tensorflow.js indicates promising results for in browser inference for smaller
-                    models. (Demo below in features)
-                  </li>
-                </ul>
-              </li>
-          </li>
-        </ul>
-        </li>
-        </ul>
-      </article>
-      <h3 class="title" id="features">Features</h3>
+
+    <h2 class="title">What I'm Working On</h2>
+    <p>
+      While most of my career work has been in desktop apps, my interests and hobby projects lie in more modern,
+      web-based technologies as well as computer vision.
+    </p>
+
+    <div class="card">
+      <h2><a href="https://www.frameslice.com" target="_blank">FrameSlice.com</a></h2>
+      <ul>
+        <li>Client side video cropping and labelling site</li>
+        <li>Uses ffmpeg.wasm to avoid server uploads</li>
+        <li>Next.js / React / Material UI</li>
+      </ul>
+      <img src="/imgs/FrameSlice2.webp" alt="FrameSlice screenshot">
+    </div>
+
+    <div class="card">
+      <h2 class="title"><a href="https://icodethis.com/SkylerA" target="_blank">iCodeThis.com/SkylerA</a></h2>
       <p>
-        These projects are private repos for now, but I've captured a few of the
-        features below.
+        While I wouldn't claim artistic vision is my forte (as evidenced by this site 😉), I am skilled in slicing other
+        people's designs. You can check some of my work on iCodeThis where I recreate designs from only a png of the
+        desired design.
       </p>
-      <div class="img-gallery">
-        <article>
-          <h4 class="title">Making Filters</h4>
-          <p>
-            "Filters" are a collection of actions run on a given frame of
-            video. A filter can take a whole video frame or can crop down to a
-            specific location. A filter can apply custom pre processing
-            functions to its crop. The augmented crop is then passed to a
-            specified parsing/inference function which allows the user/dev to
-            run whatever inference or other data collection they want on that
-            crop. The results are stored per crop, per frame and are returned
-            to the front end for debugging purposes.
-          </p>
-          <p>
-            In this example, the user quickly selectcs two portions of the
-            video they'd like to crop for OCR later.
-          </p>
-          <div class="wip">
-            <img src="/imgs/MakeFilters.webp" alt="Making Filters" />
+
+      <div class="scroll-container">
+        <a href="https://icodethis.com/SkylerA">
+          <div class="scroll-gallery">
+            <img src="/imgs/iCodeThis/ict1.png" alt="">
+            <img src="/imgs/iCodeThis/ict2.png" alt="">
+            <img src="/imgs/iCodeThis/ict3.png" alt="">
+            <img src="/imgs/iCodeThis/ict4.png" alt="">
+            <img src="/imgs/iCodeThis/ict5.png" alt="">
+            <img src="/imgs/iCodeThis/ict6.png" alt="">
+            <!-- Duplicate images for no gap scroll -->
+            <img src="/imgs/iCodeThis/ict1.png" alt="">
+            <img src="/imgs/iCodeThis/ict2.png" alt="">
+            <img src="/imgs/iCodeThis/ict3.png" alt="">
+            <img src="/imgs/iCodeThis/ict4.png" alt="">
+            <img src="/imgs/iCodeThis/ict5.png" alt="">
+            <img src="/imgs/iCodeThis/ict6.png" alt="">
           </div>
-        </article>
-        <article>
-          <h4 class="title">Crop Image Pre-Processing</h4>
-          <p>
-            Pre-procs allow the user to modify their image/data before it is
-            passed to an inference/parsing stage.
-          </p>
-          <p>
-            On the left 2 filters are setup to apply different image pre
-            processing steps to improve the images for OCR. On the right,
-            those filters are run for the next 30 frames and the results are
-            shown.
-          </p>
-          <div class="wip">
-            <img src="/imgs/FilterArgs.webp" alt="Image Filters" />
-          </div>
-        </article>
-        <article>
-          <h4 class="title">Filter Results</h4>
-          <p>
-            Developers can return whatever data they want in their results.
-          </p>
-          <p>
-            In this example, a mobilnetv3 classifier is run on 4 different
-            crops and inference info is returned with it.
-          </p>
-          <div class="wip">
-            <img src="/imgs/ParseProcs.webp" alt="Filter Results" />
-          </div>
-        </article>
-        <article>
-          <h4 class="title">Filter Timeline</h4>
-          <p>
-            Provides a visual timeline of classifications made in a given
-            range of frames.
-          </p>
-          <p>
-            The timeline is an interactive canvas using svgs that are
-            generated on demand using class/marker meta data and then cached
-            for later drawings. Clicking a result jumps to the frame it was
-            captured in to allow for quick debugging/verification of inference
-            results.
-          </p>
-          <div class="wip">
-            <img src="/imgs/FrameTimeline.webp" alt="Filter Timeline" />
-          </div>
-        </article>
-        <article>
-          <h4 class="title">Label Editor</h4>
-          <p>
-            Client side label editor that can load, sort, and edit
-            classification labels. Greatly simplifies finding incorrectly
-            labeled classes as all labels are shown together making different
-            images stick out. Labels can be downloaded as a zip or uploaded to
-            a given model training label folder.
-          </p>
-          <p>
-            In this example, the class editor is pointed at a local collection
-            of files. When some mislabeled classes are found, they are quickly
-            fixed and then a few images are given a new label for
-            demonstration purposes.
-          </p>
-          <div class="wip">
-            <img src="/imgs/LabelEditor.webp" alt="Label Editor" />
-          </div>
-        </article>
-        <article>
-          <h4 class="title">Annotating Results</h4>
-          <p>
-            A filter's results can be selected and annotated to capture new
-            training data or to capture and re-label images the model is
-            currently mis-classifying
-          </p>
-          <div class="wip">
-            <img src="/imgs/AnnotateResults.webp" alt="Annotating Results" />
-          </div>
-        </article>
-        <article>
-          <h4 class="title">Client Side Video Processing</h4>
-          <p>
-            This is the first step in moving video parsing to the client side. The goal is to leverage existing user
-            hardware to remove video uploads and reduce server load. My vision is to provide a free tier that allows a
-            user to leverage their hardware and then provide server powered instances as an upgrade.
-            <a href="https://www.frameslice.com" target="_blank" rel="noopener noreferrer">Live Demo</a>
-          </p>
-          <div class="wip">
-            <video autoplay loop muted playsinline>
-              <source src="/imgs/ClientCrop264.mp4" type="video/mp4">
-              Your browser does not support HTML5 video.
-            </video>
-          </div>
-        </article>
-        <article>
-          <h4 class="title">Client Side Video Inference/Classification</h4>
-          <p>
-            Using tensorflow.js to classify crops taken with ffmpeg.wasm and display them in a custom timeline
-            component that syncs up with the loaded video.
-          </p>
-          <div class="wip">
-            <img src="/imgs/infer.webp" alt="Client side image classification" />
-          </div>
-        </article>
-        <article>
-          <h4 class="title">Experimental Concept: Time Based Labelling</h4>
-          <p>
-            In this example, a range of similar, time-sorted frames are
-            overlayed on top of each other and the user quickly labels each
-            portion.
-            <a href="https://codepen.io/SkylerA/pen/GRXYmdz" target="_blank" rel="noopener noreferrer">More Explanation
-              and Live Demo</a>
-          </p>
-          <div class="wip">
-            <img src="/imgs/TemporalLabels.webp" alt="Time Based Labelling" />
-          </div>
-        </article>
+        </a>
       </div>
-    </article>
-  </div>
+
+    </div>
+    <div class="card">
+      <h2 class="title">Video Processing Pipeline</h2>
+      <p>
+        In my freetime, I'm working on a python framework that seeks to
+        simplify the creation and use of computer vision models for
+        domain specific projects as well as exploring how to make computer
+        vision accessible to the common user.
+      </p>
+      <ul class="list">
+        <li>Python Back-end</li>
+        <li>
+          <ul>
+            <li>Crop and Pre-process video frames</li>
+            <li>Apply user computer vision models to frames</li>
+            <li>Collect and interpret results</li>
+            <li>Serve results via Flask</li>
+          </ul>
+        </li>
+        <li>React Front-end</li>
+        <li>
+          <ul>
+            <li>Collect frames from video for feedback/testing</li>
+            <li>Create and modify crop and filter tasks</li>
+            <li>Test and debug user model results</li>
+            <li>
+              Also experimenting with pulling backend elements like video
+              processing into the client app
+            </li>
+            <li>
+              <ul>
+                <li>
+                  Client side video parsing <a href="https://www.frameslice.com" target="_blank"
+                    rel="noopener noreferrer">proof of concept</a>
+                </li>
+                <li>
+                  Early testing with tensorflow.js indicates promising results for in browser inference for smaller
+                  models. (Demo below in features)
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+
+    <h3 class="title" id="features">Project Features</h3>
+    <p>
+      Most of my projects are private repos for now, but I've captured a few of the
+      features below.
+    </p>
+    <div class="card">
+      <h4 class="title">Making Filters</h4>
+      <p>
+        "Filters" are a collection of actions run on a given frame of
+        video. A filter can take a whole video frame or can crop down to a
+        specific location. A filter can apply custom pre processing
+        functions to its crop. The augmented crop is then passed to a
+        specified parsing/inference function which allows the user/dev to
+        run whatever inference or other data collection they want on that
+        crop. The results are stored per crop, per frame and are returned
+        to the front end for debugging purposes.
+      </p>
+      <p>
+        In this example, the user quickly selectcs two portions of the
+        video they'd like to crop for OCR later.
+      </p>
+      <div class="wip">
+        <img src="/imgs/MakeFilters.webp" loading="lazy" alt="Making Filters">
+      </div>
+    </div>
+    <div class="card">
+      <h4 class="title">Crop Image Pre-Processing</h4>
+      <p>
+        Pre-procs allow the user to modify their image/data before it is
+        passed to an inference/parsing stage.
+      </p>
+      <p>
+        On the left 2 filters are setup to apply different image pre
+        processing steps to improve the images for OCR. On the right,
+        those filters are run for the next 30 frames and the results are
+        shown.
+      </p>
+      <div class="wip">
+        <img src="/imgs/FilterArgs.webp" loading="lazy" alt="Image Filters">
+      </div>
+    </div>
+    <div class="card">
+      <h4 class="title">Filter Results</h4>
+      <p>
+        Developers can return whatever data they want in their results.
+      </p>
+      <p>
+        In this example, a mobilnetv3 classifier is run on 4 different
+        crops and inference info is returned with it.
+      </p>
+      <div class="wip">
+        <img src="/imgs/ParseProcs.webp" loading="lazy" alt="Filter Results">
+      </div>
+    </div>
+    <div class="card">
+      <h4 class="title">Filter Timeline</h4>
+      <p>
+        Provides a visual timeline of classifications made in a given
+        range of frames.
+      </p>
+      <p>
+        The timeline is an interactive canvas using svgs that are
+        generated on demand using class/marker meta data and then cached
+        for later drawings. Clicking a result jumps to the frame it was
+        captured in to allow for quick debugging/verification of inference
+        results.
+      </p>
+      <div class="wip">
+        <img src="/imgs/FrameTimeline.webp" loading="lazy" alt="Filter Timeline">
+      </div>
+    </div>
+    <div class="card">
+      <h4 class="title">Label Editor</h4>
+      <p>
+        Client side label editor that can load, sort, and edit
+        classification labels. Greatly simplifies finding incorrectly
+        labeled classes as all labels are shown together making different
+        images stick out. Labels can be downloaded as a zip or uploaded to
+        a given model training label folder.
+      </p>
+      <p>
+        In this example, the class editor is pointed at a local collection
+        of files. When some mislabeled classes are found, they are quickly
+        fixed and then a few images are given a new label for
+        demonstration purposes.
+      </p>
+      <div class="wip">
+        <img src="/imgs/LabelEditor.webp" loading="lazy" alt="Label Editor">
+      </div>
+    </div>
+    <div class="card">
+      <h4 class="title">Annotating Results</h4>
+      <p>
+        A filter's results can be selected and annotated to capture new
+        training data or to capture and re-label images the model is
+        currently mis-classifying
+      </p>
+      <div class="wip">
+        <img src="/imgs/AnnotateResults.webp" loading="lazy" alt="Annotating Results">
+      </div>
+    </div>
+    <div class="card">
+      <h4 class="title">Client Side Video Processing</h4>
+      <p>
+        This is the first step in moving video parsing to the client side. The goal is to leverage existing user
+        hardware to remove video uploads and reduce server load. My vision is to provide a free tier that allows a
+        user to leverage their hardware and then provide server powered instances as an upgrade.
+        <a href="https://www.frameslice.com" target="_blank" rel="noopener noreferrer">Live Demo</a>
+      </p>
+      <div class="wip">
+        <video autoplay loop muted playsinline>
+          <source src="/imgs/ClientCrop264.mp4" type="video/mp4">
+          Your browser does not support HTML5 video.
+        </video>
+      </div>
+    </div>
+    <div class="card">
+      <h4 class="title">Client Side Video Inference/Classification</h4>
+      <p>
+        Using tensorflow.js to classify crops taken with ffmpeg.wasm and display them in a custom timeline
+        component that syncs up with the loaded video.
+      </p>
+      <div class="wip">
+        <img src="/imgs/infer.webp" loading="lazy" alt="Client side image classification">
+      </div>
+    </div>
+    <div class="card">
+      <h4 class="title">Experimental Concept: Time Based Labelling</h4>
+      <p>
+        In this example, a range of similar, time-sorted frames are
+        overlayed on top of each other and the user quickly labels each
+        portion.
+        <a href="https://codepen.io/SkylerA/pen/GRXYmdz" target="_blank" rel="noopener noreferrer">More Explanation and
+          Live Demo</a>
+      </p>
+      <div class="wip">
+        <img src="/imgs/TemporalLabels.webp" loading="lazy" alt="Time Based Labelling">
+      </div>
+    </div>
+  </main>
+
   <footer>
     <svg viewBox="7.675 29.929 25.01 12.952" width="25.01" height="12.952">
       <path style="fill: rgb(216, 216, 216); stroke: rgb(0, 0, 0)"
