@@ -1,9 +1,15 @@
 :root {
     --gradient: linear-gradient(180deg, #009aff, #ff00cc, #ffaa00);
-    --colors-pageBackground: rgb(32, 32, 32);
-    --colors-highContrast: rgb(192, 192, 192);
+    --clr-dark: rgb(32, 32, 32);
+    --clr-light: rgb(192, 192, 192);
     --title-color: white;
     --article-margin: 1rem;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
 }
 
 body,
@@ -14,6 +20,8 @@ html {
 img,
 video {
     display: block;
+    max-width: 100%;
+    height: auto;
 }
 
 .card img,
@@ -30,8 +38,8 @@ body {
     margin: auto;
     min-width: 300px;
     max-width: 750px;
-    background-color: var(--colors-pageBackground);
-    color: var(--colors-highContrast);
+    background-color: var(--clr-dark);
+    color: var(--clr-light);
     font-family: system-ui, Helvetica Neue, sans-serif;
 }
 
@@ -58,16 +66,30 @@ header h1 {
 }
 
 .links {
-    position: absolute;
-    top: -50%;
-    right: 0;
     list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 2rem 0 0 0;
 }
 
 .links li {
     margin: 0;
 }
 
+.links a {
+    text-decoration: none;
+    border-radius: 1rem;
+    padding: .25rem 1rem;
+    background-color: var(--clr-light);
+    color: var(--clr-dark);
+}
+
+.links a:hover {
+    background-color: var(--clr-dark);
+    background-image: linear-gradient(75deg, #30bfff, #6d1cff);
+    color: white;
+}
 
 h2 {
     font-size: 2rem;
@@ -82,16 +104,6 @@ h4 {
 }
 
 @media (max-width: 500px) {
-    .links {
-        display: block;
-        position: relative;
-        display: flex;
-        justify-content: space-between;
-        margin-top: var(--article-margin);
-        top: initial;
-        right: initial;
-    }
-
     h2 {
         font-size: 7vw;
     }
@@ -105,7 +117,7 @@ a {
     text-decoration: underline;
 }
 
-a[target="_blank"]::after {
+main a[target="_blank"]::after {
     content: "";
     width: 0.5rem;
     height: 0.5rem;
@@ -118,7 +130,7 @@ a[target="_blank"]::after {
 }
 
 .gradient-fade,
-a:hover {
+main a:hover {
     background: var(--gradient);
     background-size: 600% 600%;
     -webkit-animation: GradientFade 6s ease infinite;
@@ -185,13 +197,6 @@ article {
     color: var(--title-color);
 }
 
-p {
-    /* margin: 1.5rem 0rem; */
-}
-
-.card p {
-    /* margin: revert; */
-}
 
 a {
     cursor: pointer;
@@ -283,6 +288,11 @@ ul>ul {
 @media (max-width: 500px) {
     .logos {
         grid-template-columns: repeat(1, 1fr);
+    }
+
+    .links a {
+        font-size: calc(100cqw / 27);
+        padding: .25rem .5rem;
     }
 }
 
