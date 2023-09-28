@@ -179,7 +179,6 @@ a:hover {
 
 article {
     margin: var(--article-margin) 0;
-    container-type: inline-size;
 }
 
 .title {
@@ -350,12 +349,10 @@ ul>ul {
     background: black;
     border-radius: .5rem;
     padding: 1rem;
-    container-type: inline-size;
 }
 
 .card img,
 .card video {
-    /* max-width: 100cqw; */
     max-width: 100%;
 }
 
